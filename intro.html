@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FreshGro – Fresh Groceries Delivered</title>
+
+<!-- Internal CSS -->
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f8f8f8;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 100vh;
+        background:('bg.jpg')
+            no-repeat center/cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color:antiquewhite;
+        padding: 20px;
+        background-image:url('bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center ;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero p {
+        font-size: 1.3rem;
+        margin-top: 10px;
+        animation: fadeIn 2.8s ease-in-out;
+    }
+
+    .hero button {
+        margin-top: 20px;
+        padding: 12px 30px;
+        font-size: 1.2rem;
+        border: none;
+        background: darkblue;
+        color: white;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: 0.3s;
+        animation: fadeIn 3.2s ease-in-out;
+    }
+
+    .hero button:hover {
+        background:red;
+        transform: scale(1.05);
+    }
+
+    /* About Section */
+    .about-section {
+        padding: 60px 20px;
+         background: linear-gradient(135deg,skyblue,#6eef95);
+        text-align: center;
+    }
+
+    .about-section h2 {
+        font-size: 2.3rem;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .team-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    .profile-card {
+        width: 260px;
+        background:#69e0aa;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .profile-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .profile-card img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+    }
+
+    .profile-card h3 {
+        margin: 10px 0 5px;
+        color: #333;
+    }
+
+    .profile-card p {
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    /* Notification Bar */
+    #msg {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 8px;
+        display: none;
+    }
+
+    /* Keyframes */
+    @keyframes fadeIn {
+        from {opacity: 0; transform: translateY(20px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Hero Section -->
+<div class="hero">
+    <h1>Welcome to FRESH MaRt</h1>
+    <p>Your daily groceries delivered fresh to your doorstep</p>
+    <button onclick="showMessage()">Shop Now</button>
+</div>
+
+<!-- Team / About Section -->
+<div class="about-section">
+    <h2>Meet Our Team</h2>
+    <p>We are committed to delivering fresh, high-quality groceries with excellent customer service.</p>
+
+    <div class="team-container">
+        <!-- Owner -->
+        <div class="profile-card">
+            <img src="p1.jpg" alt="Owner">
+            <h3>Rahul Sharma</h3>
+            <p><strong>Owner</strong></p>
+            <p>Rahul founded FreshGro with the vision of providing affordable and healthy products to every household.</p>
+        </div>
+
+        <!-- Manager -->
+        <div class="profile-card">
+            <img src="p2.jpg" alt="Manager">
+            <h3>Priya Mehta</h3>
+            <p><strong>Store Manager</strong></p>
+            <p>Priya ensures smooth daily operations and maintains top-quality service for all customers.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Popup Message -->
+<div id="msg">Redirecting to shop...</div>
+
+<!-- Internal JS -->
+<script>
+    function showMessage() {
+        let msg = document.getElementById("msg");
+        msg.style.display = "block";
+
+        setTimeout(() => {
+            msg.style.display = "none";
+            window.location.href = "third.html"; // <-- Redirect added
+        }, 2000);
+    }
+</script>
+
+
+</body>
+</html>

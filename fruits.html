@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FreshGro – Deals & Chart</title>
+
+<!-- INTERNAL CSS -->
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg,skyblue,#6eef95);
+    }
+
+    .header {
+        background:#2e8a0c;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .offers-title {
+        text-align: center;
+        margin: 30px 0;
+        font-size: 2rem;
+        color: #333;
+    }
+
+    .offers-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 25px;
+        padding: 20px;
+    }
+
+    .card {
+        width: 250px;
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        text-align: center;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .price {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: darkblue;
+        margin: 10px 0;
+    }
+
+    input[type='number'] {
+        padding: 8px;
+        width: 60px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        background: darkblue;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background: red;
+    }
+
+    #totalBox {
+        background: #4CAF50;
+        color: white;
+        padding: 15px;
+        width: 300px;
+        text-align: center;
+        margin: 30px auto;
+        font-size: 1.3rem;
+        border-radius: 10px;
+        display: none;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="header">FreshGro – Today’s Best Deals</div>
+
+<h2 class="offers-title"> Select Quantities & Add to Cart</h2>
+
+<div class="offers-container">
+
+    <!-- FRUITS CARD -->
+    <div class="card" onclick="openPage('fruits.html')">
+        <img src="fruits/apple.jpg">
+        <h3>APPLE</h3>
+        <p class="price">₹100</p>
+
+        <input type="number" id="qty1" min="1" value="1" onclick="event.stopPropagation();">
+
+        <button class="btn" onclick="addToCart(120, 'qty1'); event.stopPropagation();">Add to Cart</button>
+    </div>
+
+    <!-- VEGGIES CARD -->
+    <div class="card" onclick="openPage('veggies.html')">
+        <img src="fruits/banans.jpg">
+        <h3>BANANAS</h3>
+        <p class="price">₹40</p>
+
+        <input type="number" id="qty2" min="1" value="1" onclick="event.stopPropagation();">
+
+        <button class="btn" onclick="addToCart(80, 'qty2'); event.stopPropagation();">Add to Cart</button>
+    </div>
+
+    <!-- DAIRY CARD -->
+    <div class="card" onclick="openPage('dairy.html')">
+        <img src="fruits/oranges.jpg">
+        <h3>ORANGES</h3>
+        <p class="price">₹150</p>
+
+        <input type="number" id="qty3" min="1" value="1" onclick="event.stopPropagation();">
+
+        <button class="btn" onclick="addToCart(150, 'qty3'); event.stopPropagation();">Add to Cart</button>
+    </div>
+
+    <!-- CLEANING -->
+    <div class="card" onclick="openPage('cleaning.html')">
+        <img src="fruits/Guava.webp">
+        <h3>GUAVA</h3>
+        <p class="price">₹90</p>
+
+        <input type="number" id="qty4" min="1" value="1" onclick="event.stopPropagation();">
+
+        <button class="btn" onclick="addToCart(90, 'qty4'); event.stopPropagation();">Add to Cart</button>
+    </div>
+<!-- TOTAL BOX -->
+<div id="totalBox">Total: ₹0</div>
+
+<!-- JAVASCRIPT -->
+<script>
+    let total = 0;
+
+    function addToCart(price, qtyId) {
+        let qty = parseInt(document.getElementById(qtyId).value);
+
+        if (qty < 1 || isNaN(qty)) qty = 1;
+
+        total += price * qty;
+
+        let box = document.getElementById("totalBox");
+        box.innerHTML = "Total: ₹" + total;
+        box.style.display = "block";
+    }
+
+    function openPage(page) {
+        window.location.href = page;
+    }
+</script>
+
+</body>
+</html>

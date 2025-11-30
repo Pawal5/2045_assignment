@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FreshGro – Deals & Chart</title>
+
+<!-- INTERNAL CSS -->
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f8f8f8;
+         background: linear-gradient(135deg,skyblue,#6eef95);
+    }
+
+    .header {
+        background:#2e8a0c;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+
+    .offers-title {
+        text-align: center;
+        margin: 30px 0;
+        font-size: 2rem;
+        color: #333;
+    }
+
+    .offers-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 25px;
+        padding: 20px;
+    }
+
+    .card {
+        width: 250px;
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .price {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: darkblue;
+        margin: 10px 0;
+    }
+
+    input[type='number'] {
+        padding: 8px;
+        width: 60px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        background: darkblue;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: red;
+        transform: scale(1.05);
+    }
+
+    /* Total Box */
+    #totalBox {
+        background: #4CAF50;
+        color: white;
+        padding: 15px;
+        width: 300px;
+        text-align: center;
+        margin: 30px auto;
+        font-size: 1.3rem;
+        border-radius: 10px;
+        display: none;
+    }
+
+    /* Chart Section */
+    #chartSection {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    #chartCanvas {
+        background: white;
+        margin-top: 20px;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    }
+</style>
+</head>
+
+<body>
+
+<div class="header">FreshGro – Today’s Best Deals</div>
+
+<h2 class="offers-title">Click on photo and choose your respective catgory</h2>
+
+<!-- PRODUCT CARDS WITH QUANTITY INPUT -->
+<div class="offers-container">
+
+   <div class="offers-container">
+
+    <div class="card" onclick="openPage('fruits.html')">
+        <img src="fruits.jpg">
+        <h3>Fresh Fruits</h3>
+    </div>
+
+    <div class="card" onclick="openPage('veggies.html')">
+        <img src="veggies.jpg">
+        <h3>Fresh Veggies</h3>
+    </div>
+
+    <div class="card" onclick="openPage('dairy.html')">
+        <img src="dairy.jpg">
+        <h3>Dairy Product</h3>
+    </div>
+
+    <div class="card" onclick="openPage('cleaning.html')">
+        <img src="agents.jpg">
+        <h3>Cleaning Agents</h3>
+    </div>
+
+    <div class="card" onclick="openPage('pulses.html')">
+        <img src="pulses.jpg">
+        <h3>Pulses</h3>
+    </div>
+
+    <div class="card" onclick="openPage('cosmetics.html')">
+        <img src="cream.jpg">
+        <h3>Cosmetics</h3>
+    </div>
+
+    <div class="card" onclick="openPage('candy.html')">
+        <img src="candy.jpg">
+        <h3>Candy</h3>
+    </div>
+
+    <div class="card" onclick="openPage('snacks.html')">
+        <img src="snacks.jpg">
+        <h3>Snacks</h3>
+    </div>
+
+</div>
+
+</div>
+<script>
+    function openPage(pageName) {
+        window.location.href = pageName;
+    }
+</script>
+</body>
+</html>
